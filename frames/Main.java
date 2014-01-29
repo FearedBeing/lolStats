@@ -25,7 +25,7 @@ public class Main extends JFrame{
 		layoutMngr = new CardLayout();
 		contentPane = new JPanel(layoutMngr);
 		contentPane.add(new Menu(this), "Menu");
-		contentPane.add(new GameRecord(), "GameRecord");
+		contentPane.add(new GameRecord(this), "GameRecord");
 		this.setContentPane(contentPane);
 		
 		
@@ -34,8 +34,8 @@ public class Main extends JFrame{
 	
 	public void changePanel(String panelName){
 		switch(panelName){
-		case "Menu": layoutMngr.show(contentPane, "Menu");
-		case "GameRecord": layoutMngr.show(contentPane, "GameRecord");
+		case "Menu": layoutMngr.show(contentPane, "Menu"); break;
+		case "GameRecord": layoutMngr.show(contentPane, "GameRecord"); break;
 		}
 	}
 	

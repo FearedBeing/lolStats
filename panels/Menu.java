@@ -6,15 +6,15 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import frames.Main;
 import net.miginfocom.swing.MigLayout;
+import frames.Main;
 
 @SuppressWarnings("serial")
 public class Menu extends JPanel{
 	private Main parent;
 	
-	public Menu(Main frame){
-		this.parent = frame;
+	public Menu(Main main){
+		this.parent = main;
 		this.setLayout(new MigLayout());
 		
 		JButton buttRecord = new JButton("Record a Game");

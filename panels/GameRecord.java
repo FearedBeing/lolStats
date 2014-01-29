@@ -12,15 +12,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import ressources.ComboBox;
 import net.miginfocom.swing.MigLayout;
+import ressources.ComboBox;
+import frames.Main;
 
 @SuppressWarnings("serial")
 public class GameRecord extends JPanel{
-	
+	Main parent;
 	JPanel header, gameInfo, matchUp, party, control;
 	
-	public GameRecord(){
+	public GameRecord(Main main){
+		this.parent = main;
 		this.initializeSubPanes(); // Initializing SubPanes
 		
 		// Layout Management
@@ -199,6 +201,11 @@ public class GameRecord extends JPanel{
 		
 		private void initializeComponents(){
 			back = new JButton("Back to Menu");
+			back.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					parent.changePanel("Menu");
+				}
+			});
 			save = new JButton("Save this Game");
 			
 			status = new JLabel("STATUS");
